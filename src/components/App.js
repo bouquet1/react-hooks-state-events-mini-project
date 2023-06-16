@@ -10,6 +10,19 @@ import { CATEGORIES, TASKS } from "../data";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [taskData, setTaskData] = useState(TASKS);
+
+  function onTaskFormSubmit(newTask) {
+    setTaskData([...taskData, newTask]);
+  }
+
+  function handleClick(text) {
+    setTaskData((taskData) => taskData.filter((task) => (task.text === text ? false : true)));
+  }
+
+  const tasksToDisplay = taskData.filter((task) => {
+    return selectedCategory === "All" ? true : selectedCategory === task.category;
+  });
 
   return (
     <div className="App">
@@ -17,10 +30,10 @@ function App() {
       <CategoryFilter
         categories={CATEGORIES}
         selectedCategory={selectedCategory}
-        setselectedCategory={setSelectedCategory}
+        setSelectedCategory={setSelectedCategory}
       />
-      <NewTaskForm categories={CATEGORIES} />
-      <TaskList tasks={TASKS} />
+      <NewTaskForm categories={CATEGORIES} onTaskFormSubmit={onTaskFormSubmit} />
+      <TaskList tasks={TASKS} handleClick={handleClick} />
     </div>
   );
 }
