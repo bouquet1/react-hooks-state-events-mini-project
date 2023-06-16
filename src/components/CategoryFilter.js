@@ -4,6 +4,7 @@ function CategoryFilter({ categories, selectedCategory, setSelectedCategory }) {
   function handleClick(category) {
     setSelectedCategory(category);
   }
+  console.log(categories);
 
   return (
     <div className="categories">

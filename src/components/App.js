@@ -19,7 +19,7 @@ function App() {
         selectedCategory={selectedCategory}
         setselectedCategory={setSelectedCategory}
       />
-      <NewTaskForm />
+      <NewTaskForm categories={CATEGORIES} />
       <TaskList tasks={TASKS} />
     </div>
   );
