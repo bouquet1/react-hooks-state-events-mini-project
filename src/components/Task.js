@@ -1,8 +1,6 @@
 import React from "react";
 
 function Task({ text, category, handleClick }) {
-  //const [taskList, setTaskList] = useState(text, category);
-
   return (
     <div className="task">
       <div className="label">{category}</div>
