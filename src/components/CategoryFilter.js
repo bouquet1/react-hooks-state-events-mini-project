@@ -25,7 +25,7 @@ function CategoryFilter({ categories, selectedCategory, setSelectedCategory }) {
 export default CategoryFilter;
 
 /**
-handleButtonClick takes a category parameter and sets the selected category using the setselectedCategory function.
+handleClick takes a category parameter and sets the selected category using the setselectedCategory function.
 Each category in the array is mapped to a button element.
 The key prop is set to category.
 The className prop of each button is conditionally set. If the setselectedCategory value matches the current category, the button will have the "selected" class.

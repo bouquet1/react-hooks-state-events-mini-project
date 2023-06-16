@@ -32,7 +32,7 @@ function App() {
         setSelectedCategory={setSelectedCategory}
       />
       <NewTaskForm categories={CATEGORIES} onTaskFormSubmit={onTaskFormSubmit} />
-      <TaskList tasks={TASKS} handleClick={handleClick} />
+      <TaskList tasks={tasksToDisplay} handleClick={handleClick} />
     </div>
   );
 }

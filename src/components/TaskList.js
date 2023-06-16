@@ -10,7 +10,7 @@ function TaskList({ tasks, handleClick }) {
   return (
     <div className="tasks">
       {/* {taskList}       */}
-      {tasks.map((task, index) => (
+      {tasks.map((task) => (
         <Task key={uuidv4} category={task.category} text={task.text} handleClick={handleClick} />
       ))}
     </div>
