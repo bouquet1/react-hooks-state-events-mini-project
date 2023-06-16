@@ -1,18 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Task({ id, text, category }) {
-  const [taskList, setTaskList] = useState(text, category);
-  //console.log(taskList);
-
-  function handleDelete() {
-    console.log();
-  }
+function Task({ text, category, handleClick }) {
+  //const [taskList, setTaskList] = useState(text, category);
 
   return (
     <div className="task">
       <div className="label">{category}</div>
       <div className="text">{text}</div>
-      <button className="delete" onClick={handleDelete}>
+      <button className="delete" onClick={() => handleClick(text)}>
         X
       </button>
     </div>
